@@ -8,6 +8,9 @@ services:
 
   freshrss:
     image: freshrss/freshrss
+    build:
+      context: https://github.com/FreshRSS/FreshRSS.git#latest
+      dockerfile: Docker/Dockerfile-Alpine
     container_name: freshrss
     hostname: freshrss
     restart: unless-stopped
