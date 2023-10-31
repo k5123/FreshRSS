@@ -17,7 +17,9 @@ FreshRSS is able to receive instant push notifications from compatible sources, 
 
 FreshRSS natively supports basic Web scraping, based on [XPath](https://www.w3.org/TR/xpath-10/), for Web sites not providing any RSS / Atom feed.
 
-Finally, it supports [extensions](#extensions) for further tuning.
+Different [login methods](https://freshrss.github.io/FreshRSS/en/admins/09_AccessControl.html) are supported: Web form (including an anonymous option), HTTP Authentication (compatible with proxy delegation), OpenID Connect.
+
+Finally, FreshRSS supports [extensions](#extensions) for further tuning.
 
 * Official website: <https://freshrss.org>
 * Demo: <https://demo.freshrss.org/>
@@ -30,7 +32,7 @@ Finally, it supports [extensions](#extensions) for further tuning.
 Feature requests, bug reports, and other contributions are welcome. The best way is to [open an issue on GitHub](https://github.com/FreshRSS/FreshRSS/issues).
 We are a friendly community.
 
-To facilitate contributions, the following option is available:
+To facilitate contributions, the [following option](.devcontainer/README.md) is available:
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=edge&repo=6322699)
 
@@ -55,8 +57,8 @@ FreshRSS comes with absolutely no warranty.
 	* Works on mobile (except a few features)
 * Light server running Linux or Windows
 	* It even works on Raspberry Pi 1 with response time under a second (tested with 150 feeds, 22k articles)
-* A web server: Apache2 (recommended), nginx, lighttpd (not tested on others)
-* PHP 7.2+
+* A web server: Apache2.4+ (recommended), nginx, lighttpd (not tested on others)
+* PHP 7.4+
 	* Required extensions: [cURL](https://www.php.net/curl), [DOM](https://www.php.net/dom), [JSON](https://www.php.net/json), [XML](https://www.php.net/xml), [session](https://www.php.net/session), [ctype](https://www.php.net/ctype), and [PDO_MySQL](https://www.php.net/pdo-mysql) or [PDO_SQLite](https://www.php.net/pdo-sqlite) or [PDO_PGSQL](https://www.php.net/pdo-pgsql)
 	* Recommended extensions: [GMP](https://www.php.net/gmp) (for API access on 32-bit platforms), [IDN](https://www.php.net/intl.idn) (for Internationalized Domain Names), [mbstring](https://www.php.net/mbstring) (for Unicode strings), [iconv](https://www.php.net/iconv) (for charset conversion), [ZIP](https://www.php.net/zip) (for import/export), [zlib](https://www.php.net/zlib) (for compressed feeds)
 * MySQL 5.5.3+ or MariaDB equivalent, or SQLite 3.7.4+, or PostgreSQL 9.5+
@@ -128,7 +130,7 @@ and [Fever API](https://freshrss.github.io/FreshRSS/en/users/06_Fever_API.html) 
 | [NewsFlash](https://gitlab.com/news-flash/news_flash_gtk)                             | GNU/Linux   | [✔️](https://gitlab.com/news-flash/news_flash_gtk)            | ✔️✔️                   | GReader, Fever | ➖            | ⭐⭐      | ➖                           | ✔️                | ✔️       | ✔️    | ➖      | ➖          |
 | [Newsboat 2.24+](https://newsboat.org/)                                 | GNU/Linux, macOS, FreeBSD | [✔️](https://github.com/newsboat/newsboat/)                   | ✔️✔️                   | GReader          | ➖            | ⭐        | ➖                             | ✔️                  | ✔️         | ➖     | ✔️       | ➖           |
 | [Vienna RSS](http://www.vienna-rss.com/)                                              | macOS       | [✔️](https://github.com/ViennaRSS/vienna-rss)                 | ✔️✔️                   | GReader          | ❔            | ❔        | ❔                             | ❔                  | ❔         | ❔     | ❔       | ❔           |
-| [Readkit](https://apps.apple.com/app/readkit/id588726889)                             | iOS, macOS  | ➖                                                            | ✔️✔️                   | GReader          | ✔️            | ⭐⭐⭐    | ➖                             | ✔️                  | ✔️         | ➖     | ✓       | 💲           |
+| [Readkit](https://apps.apple.com/app/readkit-read-later-rss/id1615798039)                             | iOS, macOS  | ➖                                                            | ✔️✔️                   | GReader          | ✔️            | ⭐⭐⭐    | ➖                             | ✔️                  | ✔️         | ➖     | ✓       | 💲           |
 | [Reeder](https://www.reederapp.com/)*                                                 | iOS, macOS  | ➖                                                            | ✔️✔️                   | GReader, Fever   | ✔️            | ⭐⭐⭐    | ➖                             | ✔️                  | ✔️         | ➖     | ➖       | ✔️           |
 | [lire](https://lireapp.com/)                                                          | iOS, macOS  | ➖                                                            | ✔️✔️                   | GReader          | ❔            | ❔        | ❔                             | ❔                  | ❔         | ❔     | ❔       | ❔           |
 | [Unread](https://apps.apple.com/app/unread-2/id1363637349)                            | iOS         | ➖                                                            | ✔️✔️                   | Fever            | ✔️            | ❔        | ❔                             | ❔                  | ✔️         | ➖     | ➖       | ➖           |
@@ -151,3 +153,11 @@ and [Fever API](https://freshrss.github.io/FreshRSS/en/users/06_Fever_API.html) 
 
 * [bcrypt.js](https://github.com/dcodeIO/bcrypt.js)
 * [phpQuery](https://github.com/phpquery/phpquery)
+
+# Alternatives
+
+If FreshRSS does not suit you for one reason or another, here are alternative solutions to consider:
+
+* [Kriss Feed](https://tontof.net/kriss/feed/)
+* [Leed](https://github.com/LeedRSS/Leed)
+* [And more…](https://alternativeto.net/software/freshrss/) (but if you like FreshRSS, give us a vote!)

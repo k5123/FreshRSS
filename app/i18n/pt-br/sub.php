@@ -68,7 +68,7 @@ return array(
 		'error' => 'Este feed encontra-se com problema. Por favor verifique se ele ainda está disponível e atualize-o.',
 		'filteractions' => array(
 			'_' => 'Ações do filtro',
-			'help' => 'Escreva um filtro de pesquisa por linha.',
+			'help' => 'Escreva um filtro de pesquisa por linha. Operators <a href="https://freshrss.github.io/FreshRSS/en/users/10_filter.html#with-the-search-field" target="_blank">see documentation</a>.',	// DIRTY
 		),
 		'information' => 'Informações',
 		'keep_min' => 'Número mínimo de artigos para manter',
@@ -122,6 +122,7 @@ return array(
 				'xpath' => 'XPath para:',
 			),
 			'rss' => 'RSS / Atom (padrão)',
+			'xml_xpath' => 'XML + XPath',	// TODO
 		),
 		'maintenance' => array(
 			'clear_cache' => 'Limpar o cache',

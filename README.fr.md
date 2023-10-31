@@ -17,7 +17,9 @@ FreshRSS est capable de recevoir des notifications push instantanées depuis les
 
 FreshRSS supporte nativement le moissonnage du Web (Web Scraping) basique, basé sur [XPath](https://www.w3.org/TR/xpath-10/), pour les sites Web sans flux RSS / Atom.
 
-Enfin, il permet l’ajout d’[extensions](#extensions) pour encore plus de personnalisation.
+Plusieurs [méthodes de connexion](https://freshrss.github.io/FreshRSS/en/admins/09_AccessControl.html) sont supportées : formulaire Web (avec un mode anonyme), Authentification HTTP (compatible avec proxy), OpenID Connect.
+
+Enfin, FreshRSS permet l’ajout d’[extensions](#extensions) pour encore plus de personnalisation.
 
 * Site officiel : <https://freshrss.org>
 * Démo : <http://demo.freshrss.org/>
@@ -30,7 +32,7 @@ Enfin, il permet l’ajout d’[extensions](#extensions) pour encore plus de per
 Les demandes de fonctionnalités, rapports de bugs, et autres contributions sont les bienvenues. Privilégiez pour cela des [demandes sur GitHub](https://github.com/FreshRSS/FreshRSS/issues).
 Nous sommes une communauté amicale.
 
-Pour faciliter les contributions, l’option suivante est disponible :
+Pour faciliter les contributions, [l’option suivante](.devcontainer/README.md) est disponible :
 
 [![Ouvrir dans GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=edge&repo=6322699)
 
@@ -55,8 +57,8 @@ FreshRSS n’est fourni avec aucune garantie.
 	* Fonctionne aussi sur mobile (sauf certaines fonctionnalités)
 * Serveur modeste, par exemple sous Linux ou Windows
 	* Fonctionne même sur un Raspberry Pi 1 avec des temps de réponse < 1s (testé sur 150 flux, 22k articles)
-* Serveur Web Apache2 (recommandé), ou nginx, lighttpd (non testé sur les autres)
-* PHP 7.2+
+* Serveur Web Apache2.4+ (recommandé), ou nginx, lighttpd (non testé sur les autres)
+* PHP 7.4+
 	* Requis : [cURL](https://www.php.net/curl), [DOM](https://www.php.net/dom), [JSON](https://www.php.net/json), [XML](https://www.php.net/xml), [session](https://www.php.net/session), [ctype](https://www.php.net/ctype), et [PDO_MySQL](https://www.php.net/pdo-mysql) ou [PDO_SQLite](https://www.php.net/pdo-sqlite) ou [PDO_PGSQL](https://www.php.net/pdo-pgsql)
 	* Recommandés : [GMP](https://www.php.net/gmp) (pour accès API sur plateformes < 64 bits), [IDN](https://www.php.net/intl.idn) (pour les noms de domaines internationalisés), [mbstring](https://www.php.net/mbstring) (pour le texte Unicode), [iconv](https://www.php.net/iconv) (pour conversion d’encodages), [ZIP](https://www.php.net/zip) (pour import/export), [zlib](https://www.php.net/zlib) (pour les flux compressés)
 * MySQL 5.5.3+ ou équivalent MariaDB, ou SQLite 3.7.4+, ou PostgreSQL 9.5+
@@ -109,11 +111,12 @@ sudo apt-get install git
 sudo git clone https://github.com/FreshRSS/FreshRSS.git
 cd FreshRSS
 
-# Si vous souhaitez utiliser la dernière version stable de FreshRSS
-sudo git checkout $(git describe --tags --abbrev=0)
+# La branche par défault “edge” est la celle de la publication continue,
+# mais vous pouvez changer de branche pour “latest” si vous préférez les versions stables de FreshRSS
+sudo git checkout latest
 
 # Mettre les droits d’accès pour le serveur Web
-sudo chown -R :www-data . && sudo chmod -R g+r . && sudo chmod -R g+w ./data/
+sudo cli/access-permissions.sh
 # Si vous souhaitez permettre les mises à jour par l’interface Web
 sudo chmod -R g+w .
 
@@ -126,7 +129,7 @@ sudo ln -s /usr/share/FreshRSS/p /var/www/html/FreshRSS
 # Mettre à jour FreshRSS vers une nouvelle version par git
 cd /usr/share/FreshRSS
 sudo git pull
-sudo chown -R :www-data . && sudo chmod -R g+r . && sudo chmod -R g+w ./data/
+sudo cli/access-permissions.sh
 ```
 
 Voir la [documentation de la ligne de commande](cli/README.md) pour plus de détails.
@@ -230,7 +233,7 @@ et [l’API Fever](https://freshrss.github.io/FreshRSS/fr/users/06_Fever_API.htm
 | [NewsFlash](https://gitlab.com/news-flash/news_flash_gtk)                             | GNU/Linux   | [✔️](https://gitlab.com/news-flash/news_flash_gtk)            | ✔️✔️                   | GReader, Fever   | ➖            | ⭐⭐        | ➖                           | ✔️                | ✔️       | ✔️    | ➖      | ➖          |
 | [Newsboat 2.24+](https://newsboat.org/)                                 | GNU/Linux, macOS, FreeBSD | [✔️](https://github.com/newsboat/newsboat/)                   | ✔️✔️                   | GReader          | ➖            | ⭐        | ➖                             | ✔️                  | ✔️         | ➖     | ✔️       | ➖           |
 | [Vienna RSS](http://www.vienna-rss.com/)                                              | macOS       | [✔️](https://github.com/ViennaRSS/vienna-rss)                 | ✔️✔️                   | GReader          | ❔            | ❔        | ❔                             | ❔                  | ❔         | ❔     | ❔       | ❔           |
-| [Readkit](https://apps.apple.com/app/readkit/id588726889)                             | iOS, macOS  | ➖                                                            | ✔️✔️                   | GReader          | ✔️            | ⭐⭐⭐    | ➖                             | ✔️                  | ✔️         | ➖     | ✓       | 💲           |
+| [Readkit](https://apps.apple.com/app/readkit-read-later-rss/id1615798039)                             | iOS, macOS  | ➖                                                            | ✔️✔️                   | GReader          | ✔️            | ⭐⭐⭐    | ➖                             | ✔️                  | ✔️         | ➖     | ✓       | 💲           |
 | [Reeder](https://www.reederapp.com/)                                                  | iOS, macOS  | ➖                                                            | ✔️✔️                   | GReader, Fever   | ✔️            | ⭐⭐⭐       | ➖                             | ✔️                  | ✔️         | ➖     | ➖       | ✔️           |
 | [lire](https://lireapp.com/)                                                          | iOS, macOS  | ➖                                                            | ✔️✔️                   | GReader          | ❔            | ❔        | ❔                             | ❔                  | ❔         | ❔     | ❔       | ❔           |
 | [Unread](https://apps.apple.com/app/unread-2/id1363637349)                            | iOS         | ➖                                                            | ✔️✔️                   | Fever            | ✔️            | ❔        | ❔                             | ❔                  | ✔️         | ➖     | ➖       | ➖           |
@@ -251,3 +254,12 @@ et [l’API Fever](https://freshrss.github.io/FreshRSS/fr/users/06_Fever_API.htm
 
 * [bcrypt.js](https://github.com/dcodeIO/bcrypt.js)
 * [phpQuery](https://github.com/phpquery/phpquery)
+
+# Alternatives
+
+Si FreshRSS ne vous convient pas pour une raison ou pour une autre, voici d’autres solutions à considérer :
+
+* [Kriss Feed](https://tontof.net/kriss/feed/)
+* [Leed](https://github.com/LeedRSS/Leed)
+* [Et plus…](https://framalibre.org/tags/lecteur-de-flux-rss)
+* [Et encore plus…](https://alternativeto.net/software/freshrss/) (mais si vous appréciez FreshRSS, mettez un “j’aime” !)

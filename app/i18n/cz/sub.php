@@ -68,7 +68,7 @@ return array(
 		'error' => 'Vyskytl se problém s kanálem. Ověřte prosím, že je vždy dostupný, pak ho aktualizujte.',
 		'filteractions' => array(
 			'_' => 'Akce filtrování',
-			'help' => 'Zapište jeden filtr hledání na řádek.',
+			'help' => 'Zapište jeden filtr hledání na řádek. Operators <a href="https://freshrss.github.io/FreshRSS/en/users/10_filter.html#with-the-search-field" target="_blank">see documentation</a>.',	// DIRTY
 		),
 		'information' => 'Informace',
 		'keep_min' => 'Minimální počet článků pro ponechání',
@@ -122,6 +122,7 @@ return array(
 				'xpath' => 'XPath pro:',
 			),
 			'rss' => 'RSS / Atom (výchozí)',
+			'xml_xpath' => 'XML + XPath',	// TODO
 		),
 		'maintenance' => array(
 			'clear_cache' => 'Vymazat mezipaměť',

@@ -107,16 +107,6 @@ a {
 	color: var(--color-text-nav);
 	outline: none;
 
-	&.btn {
-		min-height: 25px;
-		line-height: 1.5;
-		text-decoration: none;
-
-		.icon {
-			filter: brightness(3);
-		}
-	}
-
 	&#btn-subscription {
 		width: 76%;
 	}
@@ -280,11 +270,13 @@ form {
 	color: var(--color-text-light);
 	font-size: 0.9rem;
 	border: none;
-	min-height: 35px;
+	min-height: 25px;
 	min-width: 15px;
 	vertical-align: middle;
 	cursor: pointer;
 	overflow: hidden;
+	line-height: 1.5;
+	text-decoration: none;
 
 	&.active,
 	&:active,
@@ -455,11 +447,35 @@ form {
 		}
 	}
 
+	.help a {
+		color: var(--color-text-light);
+		text-decoration: underline;
+		text-decoration-style: dotted;
+
+		&:hover {
+			text-decoration-style: solid;
+		}
+	}
+
 	.input {
 		select,
 		input {
 			margin: 0 auto 5px;
 			padding: 2px 5px;
+		}
+	}
+}
+
+#dropdown-search-wrapper .dropdown-menu {
+	padding-top: 1rem;
+	padding-bottom: 0.25rem;
+
+	.stick.search {
+		width: 100%;
+
+		input[type="search"] {
+			width: 100%;
+			border: 0;
 		}
 	}
 }
@@ -848,7 +864,6 @@ form {
 }
 
 .post {
-	padding: 10px 50px;
 	font-size: 0.9em;
 
 	input {
@@ -856,14 +871,6 @@ form {
 			height: 33px;
 			margin-top: 0px;
 		}
-	}
-
-	form {
-		margin: 10px 0;
-	}
-
-	&.content {
-		max-width: 550px;
 	}
 }
 
@@ -1096,6 +1103,10 @@ form {
 
 #overlay {
 	z-index: 100;
+
+	.close .icon {
+		filter: brightness(3);
+	}
 }
 
 #panel {
@@ -1171,6 +1182,10 @@ a.signin {
 
 	.dropdown {
 		position: relative;
+
+		.dropdown-menu {
+			width: auto;
+		}
 	}
 
 	#new-article {
@@ -1261,7 +1276,8 @@ a.signin {
 			margin: 0;
 		}
 
-		.stick {
+		.stick,
+		.group {
 			margin: 0;
 
 			.btn {
@@ -1285,7 +1301,7 @@ a.signin {
 		}
 	}
 
-	#panel .close,
+	#overlay .close,
 	.dropdown-menu .toggle_aside {
 		background-color: var(--color-background-aside);
 		display: block;
@@ -1475,6 +1491,10 @@ button.as-link {
 		&::after {
 			display: none;
 		}
+	}
+
+	.dropdown.only-mobile {
+		display: initial !important;
 	}
 }
 

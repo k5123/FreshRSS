@@ -9,6 +9,7 @@ services:
   freshrss:
     image: freshrss/freshrss
     build:
+      # Pick #latest (stable release) or #edge (rolling release) or a specific release like #1.21.0
       context: https://github.com/FreshRSS/FreshRSS.git#latest
       dockerfile: Docker/Dockerfile-Alpine
     container_name: freshrss
@@ -23,3 +24,4 @@ services:
     environment:
       TZ: Europe/Paris
       CRON_MIN: '3,33'
+      TRUSTED_PROXY: 172.16.0.1/12 192.168.0.1/16

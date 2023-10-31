@@ -68,7 +68,7 @@ return array(
 		'error' => 'הזנה זו נתקלה בשגיאה, אנא ודאו שהיא תקינה ואז נסו שנית.',
 		'filteractions' => array(
 			'_' => 'Filter actions',	// TODO
-			'help' => 'Write one search filter per line.',	// TODO
+			'help' => 'Write one search filter per line. Operators <a href="https://freshrss.github.io/FreshRSS/en/users/10_filter.html#with-the-search-field" target="_blank">see documentation</a>.',	// TODO
 		),
 		'information' => 'מידע',
 		'keep_min' => 'מסםר מינימלי של מאמרים לשמור',
@@ -122,6 +122,7 @@ return array(
 				'xpath' => 'XPath for:',	// TODO
 			),
 			'rss' => 'RSS / Atom (default)',	// TODO
+			'xml_xpath' => 'XML + XPath',	// TODO
 		),
 		'maintenance' => array(
 			'clear_cache' => 'Clear cache',	// TODO
