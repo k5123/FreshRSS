@@ -68,7 +68,7 @@ return array(
 		'error' => '此源遇到一些问题。请在确认是否能正常访问后重试。',
 		'filteractions' => array(
 			'_' => '过滤动作',
-			'help' => '每行写一条过滤搜索',
+			'help' => '每行写一条过滤搜索 Operators <a href="https://freshrss.github.io/FreshRSS/en/users/10_filter.html#with-the-search-field" target="_blank">see documentation</a>.',	// DIRTY
 		),
 		'information' => '信息',
 		'keep_min' => '至少保存的文章数',
@@ -122,6 +122,7 @@ return array(
 				'xpath' => 'XPath 定位：',
 			),
 			'rss' => 'RSS / Atom (默认)',
+			'xml_xpath' => 'XML + XPath',	// TODO
 		),
 		'maintenance' => array(
 			'clear_cache' => '清理缓存',

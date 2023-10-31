@@ -17,7 +17,7 @@ return array(
 		'help' => 'Meer opties zijn beschikbaar in de persoonlijke stroom instellingen',
 		'keep_favourites' => 'Favorieten nooit verwijderen',
 		'keep_labels' => 'Labels nooit verwijderen',
-		'keep_max' => 'Maximaal aantal artikelen om te behouden',
+		'keep_max' => 'Maximaal aantal artikelen om te behouden in de feed',
 		'keep_min_by_feed' => 'Minimum aantal te behouden artikelen in de feed',
 		'keep_period' => 'Maximumleeftijd artikelen om te behouden',
 		'keep_unreads' => 'Ongelezen artikels nooit verwijderen',
@@ -32,7 +32,11 @@ return array(
 	),
 	'display' => array(
 		'_' => 'Opmaak',
-		'darkMode' => 'Automatic dark mode (beta)',	// TODO
+		'darkMode' => array(
+			'_' => 'Automatische dark mode (beta)',
+			'auto' => 'Auto',	// IGNORE
+			'no' => 'Nee',
+		),
 		'icon' => array(
 			'bottom_line' => 'Onderaan',
 			'display_authors' => 'Auteurs',
@@ -52,8 +56,8 @@ return array(
 		'theme' => array(
 			'_' => 'Thema',
 			'deprecated' => array(
-				'_' => 'Deprecated',	// TODO
-				'description' => 'This theme is no longer supported and will be not available anymore in a <a href="https://freshrss.github.io/FreshRSS/en/users/05_Configuration.html#theme" target="_blank">future release of FreshRSS</a>',	// TODO
+				'_' => 'Verouderd',
+				'description' => 'Dit thema wordt niet langer ondersteund en zal niet meer beschikbaar zijn in een <a href="https://freshrss.github.io/FreshRSS/en/users/05_Configuration.html#theme" target="_blank">toekomstige release van FreshRSS</a>.',
 			),
 		),
 		'theme_not_available' => 'Het „%s” thema is niet meer beschikbaar. Kies een ander thema.',
@@ -66,6 +70,13 @@ return array(
 		),
 		'timezone' => 'Tijdzone',
 		'title' => 'Opmaak',
+		'website' => array(
+			'full' => 'Icoon en naam',
+			'icon' => 'Alleen icoon',
+			'label' => 'Website',	// IGNORE
+			'name' => 'Alleen naam',
+			'none' => 'Geen',
+		),
 		'width' => array(
 			'content' => 'Inhoud breedte',
 			'large' => 'Breed',
