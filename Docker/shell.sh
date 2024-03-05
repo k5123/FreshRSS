@@ -1,2 +1,2 @@
 #!/bin/bash
-docker container exec -ti freshrss bash
+docker container exec -ti freshrss sh

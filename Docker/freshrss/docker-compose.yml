@@ -23,5 +23,5 @@ services:
       - extensions:/var/www/FreshRSS/extensions
     environment:
       TZ: Europe/Paris
-      CRON_MIN: '3,33'
-      TRUSTED_PROXY: 172.16.0.1/12 192.168.0.1/16
+      CRON_MIN: '*/10'
+      TRUSTED_PROXY: 172.18.0.1/12
