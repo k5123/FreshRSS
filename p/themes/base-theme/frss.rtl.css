@@ -110,6 +110,10 @@ h2 {
 	line-height: 1.5;
 }
 
+.api > h2 {
+	text-align: center;
+}
+
 h2 .icon,
 legend .icon {
 	height: 0.8em;
@@ -120,6 +124,12 @@ h3 {
 	margin: 0.5rem 0 0.25rem;
 	font-size: 1.2rem;
 	line-height: 1.5;
+}
+
+h4,
+h5,
+h6 {
+	font-size: 1em;
 }
 
 .title_hidden {
@@ -475,6 +485,24 @@ td.numeric {
 
 .btn-important {
 	font-weight: bold;
+}
+
+.btn-state1.hide {
+	display: none;
+}
+
+.btn-state2 {
+	display: none;
+}
+
+.btn-state2.show {
+	display: inline-block;
+}
+
+#button-update-loading {
+	background: var(--frss-loading-image) 0.5rem center no-repeat;
+	background-size: 1rem;
+	padding-right: 2rem;
 }
 
 /*=== switch */
@@ -1471,7 +1499,7 @@ a.website:hover .favicon {
 
 /*=== Notification and actualize notification */
 .notification {
-	padding: 0.75rem 0.75rem 0.75rem 3.5rem;
+	padding: 1rem 1rem 1rem 3.5rem;
 	position: absolute;
 	top: 1rem;
 	right: 25%; left: 25%;
@@ -1960,6 +1988,11 @@ html.slider-active {
 	color: var(--frss-font-color-light);
 }
 
+.feed[data-priority="20"] .item-title,
+.flux[data-priority="20"] .website > a {
+	text-decoration: underline double;
+}
+
 .aside .category .title:not([data-unread="0"])::after,
 .aside .feed .item-title:not([data-unread="0"])::after {
 	margin: calc(0.125rem + var(--frss-padding-top-bottom)) 0 0 0;
@@ -2071,10 +2104,6 @@ html.slider-active {
 .enclosure [download] {
 	font-size: 3rem;
 	margin-right: .8em;
-}
-
-.enclosure-description {
-	white-space: pre-line;
 }
 
 .default-user {

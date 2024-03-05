@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * MINZ - Copyright 2011 Marien Fressinaud
  * Sous licence AGPL3 <http://www.gnu.org/licenses/>
@@ -8,7 +10,7 @@
  * The Dispatcher is in charge of initialising the Controller and exectue the action as specified in the Request object.
  * It is a singleton.
  */
-class Minz_Dispatcher {
+final class Minz_Dispatcher {
 
 	/**
 	 * Singleton

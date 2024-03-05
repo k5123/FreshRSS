@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 /**
  * MINZ - Copyright 2011 Marien Fressinaud
  * Sous licence AGPL3 <http://www.gnu.org/licenses/>
@@ -7,7 +9,7 @@
 /**
  * The Minz_ActionController class is a controller in the MVC paradigm
  */
-class Minz_ActionController {
+abstract class Minz_ActionController {
 
 	/** @var array<string,string> */
 	private static array $csp_default = [

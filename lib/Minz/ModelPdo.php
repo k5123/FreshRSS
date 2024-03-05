@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 /**
  * MINZ - Copyright 2011 Marien Fressinaud
@@ -57,7 +58,7 @@ class Minz_ModelPdo {
 				break;
 			case 'sqlite':
 				$dsn = 'sqlite:' . DATA_PATH . '/users/' . $this->current_user . '/db.sqlite';
-				$this->pdo = new Minz_PdoSqlite($dsn . $dsnParams, $db['user'], $db['password'], $driver_options);
+				$this->pdo = new Minz_PdoSqlite($dsn . $dsnParams, null, null, $driver_options);
 				$this->pdo->setPrefix('');
 				break;
 			case 'pgsql':
@@ -85,7 +86,7 @@ class Minz_ModelPdo {
 	 * HOST, BASE, USER and PASS variables defined in the configuration file
 	 * @param string|null $currentUser
 	 * @param Minz_Pdo|null $currentPdo
-	 * @throws Minz_ConfigurationNamespaceException
+	 * @throws Minz_ConfigurationException
 	 * @throws Minz_PDOConnectionException
 	 */
 	public function __construct(?string $currentUser = null, ?Minz_Pdo $currentPdo = null) {
@@ -128,7 +129,7 @@ class Minz_ModelPdo {
 		$db = Minz_Configuration::get('system')->db;
 
 		throw new Minz_PDOConnectionException(
-				$ex->getMessage(),
+				$ex === null ? '' : $ex->getMessage(),
 				$db['user'], Minz_Exception::ERROR
 			);
 	}
@@ -195,9 +196,17 @@ class Minz_ModelPdo {
 			}
 		}
 
-		$callingFunction = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 3)[2]['function'] ?? '??';
+		$backtrace = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 6);
+		$calling = '';
+		for ($i = 2; $i < 6; $i++) {
+			if (empty($backtrace[$i]['function'])) {
+				break;
+			}
+			$calling .= '|' . $backtrace[$i]['function'];
+		}
+		$calling = trim($calling, '|');
 		$info = $stm == null ? $this->pdo->errorInfo() : $stm->errorInfo();
-		Minz_Log::error('SQL error ' . $callingFunction . ' ' . json_encode($info));
+		Minz_Log::error('SQL error ' . $calling . ' ' . json_encode($info));
 		return null;
 	}
 
