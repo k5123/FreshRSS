@@ -14,13 +14,16 @@ return array(
 	'action' => array(
 		'actualize' => 'Hírforrások frissítése',
 		'add' => 'Hozzáad',
-		'back' => '← Vissza',
 		'back_to_rss_feeds' => '← Vissza az RSS hírforrásokhoz',
 		'cancel' => 'Mégsem',
+		'close' => 'Close',	// TODO
 		'create' => 'Létrehoz',
+		'delete_all_feeds' => 'Delete all feeds',	// TODO
+		'delete_errored_feeds' => 'Delete feeds with errors',	// TODO
 		'delete_muted_feeds' => 'Némított hírforrások törlése',
 		'demote' => 'Lefokoz',
 		'disable' => 'Kikapcsol',
+		'download' => 'Download',	// TODO
 		'empty' => 'Üres',
 		'enable' => 'Bekapcsol',
 		'export' => 'Export',	// IGNORE
@@ -29,6 +32,14 @@ return array(
 		'load_default_shortcuts' => 'Alapértelmezett gyorsgombok visszaállítása',
 		'manage' => 'Kezelés',
 		'mark_read' => 'Megjelölés olvasottként',
+		'menu' => array(
+			'open' => 'Open menu',	// TODO
+		),
+		'nav_buttons' => array(
+			'next' => 'Next article',	// TODO
+			'prev' => 'Previous article',	// TODO
+			'up' => 'Go up',	// TODO
+		),
 		'open_url' => 'URL Megnyitása',
 		'promote' => 'Előléptet',
 		'purge' => 'Töröl',
@@ -139,13 +150,14 @@ return array(
 		'should_be_activated' => 'A JavaScript futtatásának engedélyezve kell lennie',
 	),
 	'lang' => array(
-		'cz' => 'Čeština',	// IGNORE
+		'cs' => 'Čeština',	// IGNORE
 		'de' => 'Deutsch',	// IGNORE
 		'el' => 'Ελληνικά',	// IGNORE
 		'en' => 'English',	// IGNORE
 		'en-us' => 'English (United States)',	// IGNORE
 		'es' => 'Español',	// IGNORE
 		'fa' => 'فارسی',	// IGNORE
+		'fi' => 'Suomi',	// IGNORE
 		'fr' => 'Français',	// IGNORE
 		'he' => 'עברית',	// IGNORE
 		'hu' => 'Magyar',	// IGNORE
@@ -175,6 +187,7 @@ return array(
 		'display' => 'Megjelenítés',
 		'extensions' => 'Kiegészítők',
 		'logs' => 'Log-ok',
+		'privacy' => 'Privacy',	// TODO
 		'queries' => 'Felhasználói lekérdezések',
 		'reading' => 'Olvasás',
 		'search' => 'Szavak vagy #címkék keresése',
@@ -196,9 +209,10 @@ return array(
 	),
 	'share' => array(
 		'Known' => 'Ismert weboldalak',
+		'archiveIS' => 'archive.is',	// IGNORE
 		'archiveORG' => 'archive.org',	// IGNORE
 		'archivePH' => 'archive.ph',	// IGNORE
-		'blogotext' => 'Blogotext',	// IGNORE
+		'bluesky' => 'Bluesky',	// TODO
 		'buffer' => 'Buffer',	// IGNORE
 		'clipboard' => 'Clipboard',	// IGNORE
 		'diaspora' => 'Diaspora*',	// IGNORE
@@ -220,6 +234,7 @@ return array(
 		'raindrop' => 'Raindrop.io',	// IGNORE
 		'reddit' => 'Reddit',	// IGNORE
 		'shaarli' => 'Shaarli',	// IGNORE
+		'telegram' => 'Telegram',	// IGNORE
 		'twitter' => 'Twitter',	// IGNORE
 		'wallabag' => 'wallabag v1',	// IGNORE
 		'wallabagv2' => 'wallabag v2',	// IGNORE

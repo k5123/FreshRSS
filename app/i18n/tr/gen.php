@@ -14,13 +14,16 @@ return array(
 	'action' => array(
 		'actualize' => 'Yenile akışlarınız',
 		'add' => 'Ekle',
-		'back' => '← Geri dön',
 		'back_to_rss_feeds' => '← RSS akışlarınız için geri gidin',
 		'cancel' => 'İptal',
+		'close' => 'Close',	// TODO
 		'create' => 'Oluştur',
+		'delete_all_feeds' => 'Delete all feeds',	// TODO
+		'delete_errored_feeds' => 'Delete feeds with errors',	// TODO
 		'delete_muted_feeds' => 'Sessize alınmış akışları sil',
 		'demote' => 'Yöneticilikten al',
 		'disable' => 'Pasif',
+		'download' => 'İndir',
 		'empty' => 'Boş',
 		'enable' => 'Aktif',
 		'export' => 'Dışa Aktar',
@@ -29,6 +32,14 @@ return array(
 		'load_default_shortcuts' => 'Öntanımlı kısayolları yükle',
 		'manage' => 'Yönet',
 		'mark_read' => 'Okundu olarak işaretle',
+		'menu' => array(
+			'open' => 'Menüyü aç',
+		),
+		'nav_buttons' => array(
+			'next' => 'Sonraki makale',
+			'prev' => 'Önceki makale',
+			'up' => 'Yukarı çık',
+		),
 		'open_url' => 'URLyi aç',
 		'promote' => 'Yöneticilik ata',
 		'purge' => 'Temizle',
@@ -139,13 +150,14 @@ return array(
 		'should_be_activated' => 'JavaScript aktif olmalıdır.',
 	),
 	'lang' => array(
-		'cz' => 'Čeština',	// IGNORE
+		'cs' => 'Čeština',	// IGNORE
 		'de' => 'Deutsch',	// IGNORE
 		'el' => 'Ελληνικά',	// IGNORE
 		'en' => 'English',	// IGNORE
 		'en-us' => 'English (United States)',	// IGNORE
 		'es' => 'Español',	// IGNORE
 		'fa' => 'فارسی',	// IGNORE
+		'fi' => 'Suomi',	// IGNORE
 		'fr' => 'Français',	// IGNORE
 		'he' => 'עברית',	// IGNORE
 		'hu' => 'Magyar',	// IGNORE
@@ -175,6 +187,7 @@ return array(
 		'display' => 'Görünüm',
 		'extensions' => 'Eklentiler',
 		'logs' => 'Log kayıtları',
+		'privacy' => 'Gizlilik',
 		'queries' => 'Kullanıcı sorguları',
 		'reading' => 'Okuma',
 		'search' => 'Kelime veya #etiket ara',
@@ -196,9 +209,10 @@ return array(
 	),
 	'share' => array(
 		'Known' => 'Bilinen siteler',
+		'archiveIS' => 'archive.is',	// IGNORE
 		'archiveORG' => 'archive.org',	// IGNORE
 		'archivePH' => 'archive.ph',	// IGNORE
-		'blogotext' => 'Blogotext',	// IGNORE
+		'bluesky' => 'Bluesky',	// TODO
 		'buffer' => 'Buffer',	// IGNORE
 		'clipboard' => 'Kopyala',
 		'diaspora' => 'Diaspora*',	// IGNORE
@@ -220,6 +234,7 @@ return array(
 		'raindrop' => 'Raindrop.io',	// IGNORE
 		'reddit' => 'Reddit',	// IGNORE
 		'shaarli' => 'Shaarli',	// IGNORE
+		'telegram' => 'Telegram',	// IGNORE
 		'twitter' => 'Twitter',	// IGNORE
 		'wallabag' => 'wallabag v1',	// IGNORE
 		'wallabagv2' => 'wallabag v2',	// IGNORE
